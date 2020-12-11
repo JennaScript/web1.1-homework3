@@ -112,14 +112,12 @@ def save_image(image, filter_type):
 
     return file_path
     
-
 def apply_filter(file_path, filter_name):
     """Apply a Pillow filter to a saved image."""
     i = Image.open(file_path)
     i.thumbnail((500, 500))
     i = i.filter(filter_types_dict.get(filter_name))
     i.save(file_path)
-
 
 @app.route('/image_filter', methods=['GET', 'POST'])
 def image_filter():
@@ -159,7 +157,6 @@ def image_filter():
         }
         return render_template('image_filter.html', **context)
 
-
 ################################################################################
 # GIF SEARCH ROUTE
 ################################################################################
@@ -167,7 +164,6 @@ def image_filter():
 API_KEY = 'LIVDSRZULELA'
 TENOR_URL = 'https://api.tenor.com/v1/search'
 pp = PrettyPrinter(indent=4)
-
 
 @app.route('/gif_search', methods=['GET', 'POST'])
 def gif_search():
