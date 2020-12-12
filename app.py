@@ -195,8 +195,7 @@ def gif_search():
         return render_template('gif_search.html', **context)
     else:
         return render_template('gif_search.html')
-
-
+    
 if __name__ == '__main__':
     app.config['ENV'] = 'development'
     app.run(debug=True)
